@@ -1,0 +1,91 @@
+:root {
+  --global-timing: 60s;
+  --global-delay: 50s;
+  --global-delta: calc(
+          var(--global-timing) - var(--global-delay));
+}
+
+@keyframes text-roll {
+  from {
+    transform: translateY(90%);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+@keyframes shadowing {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.page {
+  position: relative;
+  perspective: 300px;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: url("../assets/images/space.jpg");
+  object-fit: cover;
+  object-position: center;
+  font-family: "Franklin Gothic Medium", sans-serif;
+}
+
+.page__audio {
+  /*display: none;*/
+}
+
+.content {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  width: 800px;
+  transform:
+          translate(-50%, -25%)
+          rotate3d(1,0,0, 15deg);
+  animation: shadowing var(--global-delta) linear var(--global-delay) 1 forwards running;
+}
+
+.content__title-aftermath {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  margin: 0;
+  padding: 0;
+  color: orange;
+  font-size: 84px;
+  opacity: 0;
+  animation: shadowing reverse var(--global-delta) ease var(--global-delay) 1 forwards running;
+}
+
+.content__slide {
+  animation: text-roll var(--global-timing) linear 0s 1 forwards running;
+}
+
+.content__title {
+  margin: 0 0 40px 0;
+  padding: 0;
+  text-align: center;
+  color: orange;
+  font-size: 84px;
+}
+
+.content__subtitle {
+  margin: 0 0 40px 0;
+  padding: 0;
+  text-align: center;
+  color: orange;
+  font-size: 48px;
+}
+
+.content__text {
+  margin: 0 0 40px 0;
+  padding: 0;
+  text-align: center;
+  color: orange;
+  font-size: 32px;
+}
