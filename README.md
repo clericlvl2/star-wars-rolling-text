@@ -1,2 +1,2 @@
 # star-wars-rolling-text
-Rolling down the screen text feature
+Feature from Star Wars intro scene with text rolling down the screen.
